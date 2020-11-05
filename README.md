@@ -60,7 +60,7 @@ Para logearse en la API deberan enviar su **email** y **password** previamente i
 
 En el caso de que el ingreso sea exitoso se te brindara un **token** para que puedas acceder a las rutas de partidos.
 
-
+---
 
 # Matches
 
