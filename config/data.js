@@ -1,7 +1,7 @@
 const axios = require("axios");
 // Data reducida a 50 partidos
 const urlAPI =
-   "https://footballapi-lcfc.pulselive.com/football/fixtures?teams=26&comps=1,4,5,2,210,3&compSeasons=&homeTeams=&page=0&pageSize=10&sort=desc&statuses=C&altIds=true&provisional=false&detail=2";
+   "https://footballapi-lcfc.pulselive.com/football/fixtures?teams=26&comps=1,4,5,2,210,3&compSeasons=&homeTeams=&page=0&pageSize=30&sort=desc&statuses=C&altIds=true&provisional=false&detail=2";
 const fs = require("fs").promises;
 const path = "../data/matches.json";
 
@@ -21,8 +21,8 @@ async function getDatos() {
 // Setea nombre del equipo rival
 function verifyWinner(match) {
    if (match.home === "Leicester City") {
-      match.ga = match.scoreAway
-      match.rival = match.away
+      match.ga = match.scoreAway;
+      match.rival = match.away;
       if (match.scoreHome > match.scoreAway) {
          match.result = "Win";
          match.points = 3;
@@ -31,8 +31,8 @@ function verifyWinner(match) {
          match.points = 1;
       }
    } else {
-      match.ga = match.scoreHome
-      match.rival = match.home
+      match.ga = match.scoreHome;
+      match.rival = match.home;
       if (match.scoreHome < match.scoreAway) {
          match.result = "Win";
          match.points = 3;
@@ -61,11 +61,11 @@ async function dataExtractor() {
          result: "Lose",
          points: 0,
          ga: 0,
-         rival: ""
+         rival: "",
       });
-      verifyWinner(matches[index])
-      matches[index].date.setHours(0,0,0,0)
-      }
+      verifyWinner(matches[index]);
+      matches[index].date.setUTCHours(0, 0, 0, 0);
+   }
    return matches;
 }
 

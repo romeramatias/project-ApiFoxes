@@ -33,7 +33,7 @@ async function getByDate(date) {
    const connectionMongo = await connection.getConnection();
    date = dateCreator(date);
    console.log(date);
-   date.setHours(24, 0, 0);
+   date.setUTCHours(0, 0, 0);
    console.log("dps del set");
    console.log(date);
 
