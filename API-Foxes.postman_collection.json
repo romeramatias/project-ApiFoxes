@@ -1,0 +1,323 @@
+{
+	"info": {
+		"_postman_id": "4c17615a-f883-43ba-bccf-74ff0006158e",
+		"name": "API-Foxes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Matches",
+			"item": [
+				{
+					"name": "All Matches",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://aqueous-cliffs-76671.herokuapp.com/matches/",
+							"protocol": "https",
+							"host": [
+								"aqueous-cliffs-76671",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"matches",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Last Match",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTNjNDNiMGZhNjM1MTkzODNhOTg2OSIsImlhdCI6MTYwNDU2ODE1MiwiZXhwIjoxNjA1MTcyOTUyfQ.Tbcd94w3pBYCwxEeD_vfdUmMaIofV8E0Fd1ooedFD3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://aqueous-cliffs-76671.herokuapp.com/matches/last",
+							"protocol": "https",
+							"host": [
+								"aqueous-cliffs-76671",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"matches",
+								"last"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Match by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTNjNDNiMGZhNjM1MTkzODNhOTg2OSIsImlhdCI6MTYwNDU2ODE1MiwiZXhwIjoxNjA1MTcyOTUyfQ.Tbcd94w3pBYCwxEeD_vfdUmMaIofV8E0Fd1ooedFD3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://aqueous-cliffs-76671.herokuapp.com/matches/id/58959",
+							"protocol": "https",
+							"host": [
+								"aqueous-cliffs-76671",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"matches",
+								"id",
+								"58959"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Match by Date",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTNjNDNiMGZhNjM1MTkzODNhOTg2OSIsImlhdCI6MTYwNDU2ODE1MiwiZXhwIjoxNjA1MTcyOTUyfQ.Tbcd94w3pBYCwxEeD_vfdUmMaIofV8E0Fd1ooedFD3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://aqueous-cliffs-76671.herokuapp.com/matches/date/2020-11-02",
+							"protocol": "https",
+							"host": [
+								"aqueous-cliffs-76671",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"matches",
+								"date",
+								"2020-11-02"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Matches by Dates",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTNjNDNiMGZhNjM1MTkzODNhOTg2OSIsImlhdCI6MTYwNDU2ODE1MiwiZXhwIjoxNjA1MTcyOTUyfQ.Tbcd94w3pBYCwxEeD_vfdUmMaIofV8E0Fd1ooedFD3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://aqueous-cliffs-76671.herokuapp.com/matches/2020-09-01/2020-11-05",
+							"protocol": "https",
+							"host": [
+								"aqueous-cliffs-76671",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"matches",
+								"2020-09-01",
+								"2020-11-05"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Points by Dates",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTNjNDNiMGZhNjM1MTkzODNhOTg2OSIsImlhdCI6MTYwNDU2ODE1MiwiZXhwIjoxNjA1MTcyOTUyfQ.Tbcd94w3pBYCwxEeD_vfdUmMaIofV8E0Fd1ooedFD3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://aqueous-cliffs-76671.herokuapp.com/matches/points/2020-09-01/2020-11-05",
+							"protocol": "https",
+							"host": [
+								"aqueous-cliffs-76671",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"matches",
+								"points",
+								"2020-09-01",
+								"2020-11-05"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rival Most Goals",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTNjNDNiMGZhNjM1MTkzODNhOTg2OSIsImlhdCI6MTYwNDU2ODE1MiwiZXhwIjoxNjA1MTcyOTUyfQ.Tbcd94w3pBYCwxEeD_vfdUmMaIofV8E0Fd1ooedFD3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://aqueous-cliffs-76671.herokuapp.com/matches/mostGA",
+							"protocol": "https",
+							"host": [
+								"aqueous-cliffs-76671",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"matches",
+								"mostGA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Match",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 0,\r\n    \"home\": \"Leicester City\",\r\n    \"away\": \"Victoriano Arenas\",\r\n    \"scoreHome\": 1,\r\n    \"scoreAway\": 2,\r\n    \"date\": \"2020-09-13T03:00:00.000+00:00\",\r\n    \"competition\": \"FIFA Club World Cup\",\r\n    \"stadium\": \"International Stadium Yokohama\",\r\n    \"result\": \"Win\",\r\n    \"points\": 0,\r\n    \"ga\": 2,\r\n    \"rival\": \"Victoriano Arenas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/matches/addMatch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"matches",
+								"addMatch"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"xxx@gmail.com\",\r\n    \"password\": \"xxx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://aqueous-cliffs-76671.herokuapp.com/users/login",
+							"protocol": "https",
+							"host": [
+								"aqueous-cliffs-76671",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"xxx\",\r\n    \"email\": \"xxx@gmail.com\",\r\n    \"password\": \"xxx\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://aqueous-cliffs-76671.herokuapp.com/users/signup",
+							"protocol": "https",
+							"host": [
+								"aqueous-cliffs-76671",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
