@@ -33,7 +33,10 @@ async function getByDate(date) {
    const connectionMongo = await connection.getConnection();
    date = dateCreator(date);
    console.log(date);
-   date.setHours(0, 0, 0, 0);
+   date.setHours(24, 0, 0);
+   console.log("dps del set");
+   console.log(date);
+
    const match = await connectionMongo.db("apifoxes").collection("matches").findOne({ date: date });
    return match;
 }
