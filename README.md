@@ -23,11 +23,11 @@ A continuacion intentare explicar en detalle el funcionamiento de cada una de la
 >
 > Postman Request's -> [Postman Request's](https://github.com/romeramatias/project-ApiFoxes/blob/master/API-Foxes.postman_collection.json)
 
-## Users
+# Users
 
 Rutas de **registro** y **login** de **usuarios** necesarias para visualizar datos de los partidos
 
-### Sign Up
+## Sign Up
 
 
 >Ruta -> https://aqueous-cliffs-76671.herokuapp.com/users/signup
@@ -46,7 +46,7 @@ Ruta de registro de usuarios. Se debera enviar por  el **Body** un **JSON** con 
 En el caso de que el registro sea exitoso se te pedira que realices el **login** para obtener un **token**.
 
 
-### Login
+## Login
 > Ruta -> https://aqueous-cliffs-76671.herokuapp.com/users/login
 
 Para logearse en la API deberan enviar su **email** y **password** previamente ingresadas en el registro. El esquema será el siguiente:
@@ -62,7 +62,7 @@ En el caso de que el ingreso sea exitoso se te brindara un **token** para que pu
 
 
 
-## Matches
+# Matches
 
 Aqui se encuentran las rutas con informacion sobre el equipo y sus partidos. 
 
@@ -73,20 +73,20 @@ Si se utiliza Postman, el procedimiento para ingresar el **token** es el siguien
 - En **Type** seleccionaremos **Bearer Token**
 - A la derecha, en el campo **Token** ingresaremos el token provisto
 
-### All Matches
+## All Matches
 
 > Ruta -> https://aqueous-cliffs-76671.herokuapp.com/users/login
 
 En esta ruta obtendremos **todos los partidos** del Leicester ingresados en la base de datos de MongoDB **ordenados en fecha descendente**
 
 
-### Last Match
+## Last Match
 
 > Ruta -> https://aqueous-cliffs-76671.herokuapp.com/matches/last
 
 Ruta que nos brinda cual fue el **ultimo partido** disputado del equipo
 
-### Match by ID
+## Match by ID
 
 > Ruta -> https://aqueous-cliffs-76671.herokuapp.com/matches/id/ + **ID**
 
@@ -99,7 +99,7 @@ Busqueda de un partido por identificador, a la ruta se le debera agregar el para
 > https://aqueous-cliffs-76671.herokuapp.com/matches/id/58959
 
 
-### Match by Date
+## Match by Date
 
 > Ruta -> https://aqueous-cliffs-76671.herokuapp.com/matches/date/ + **Date**
 
@@ -113,7 +113,7 @@ Busqueda de un partido por fecha, a la ruta se le debera agregar el parametro de
 
 En caso de encontrar un partido con la fecha indicada lo mostrara.
 
-### Matches by Dates
+## Matches by Dates
 
 > Ruta -> https://aqueous-cliffs-76671.herokuapp.com/matches/ + **Date1** / **Date2**
 
@@ -127,7 +127,7 @@ Busqueda de partidos por un rango de fechas, a la ruta se le deberan agregar dos
 
 En caso de encontrar partidos en el rango indicado los mostrara.
 
-### Points by Dates
+## Points by Dates
 
 > Ruta -> https://aqueous-cliffs-76671.herokuapp.com/matches/points/ + **Date1** / **Date2**
 
@@ -141,7 +141,7 @@ Devolvera los puntos obtenidos dentro de un rango de fechas, a la ruta se le deb
 
 Mostrara la cantidad de puntos del Leicester en el rango indicado.
 
-### Rival Most Goals
+## Rival Most Goals
 
 > Ruta -> https://aqueous-cliffs-76671.herokuapp.com/matches/mostGA
 
