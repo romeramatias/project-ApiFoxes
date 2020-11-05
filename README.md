@@ -28,7 +28,6 @@ Rutas de **registro** y **login** de **usuarios** necesarias para visualizar dat
 
 ### Sign Up
 
----
 
 >Ruta -> https://aqueous-cliffs-76671.herokuapp.com/users/signup
 
