@@ -20,6 +20,7 @@ Librerias utilizadas:
 
 A continuacion intentare explicar en detalle el funcionamiento de cada una de las rutas, parametros que requieren y demas detalles. En el repositorio se encuentran ejemplos de request implementados en **Postman** para probar cada una de las rutas.
 > URL Heroku -> [API-Foxes](https://aqueous-cliffs-76671.herokuapp.com)
+>
 > Postman Request's -> [Postman Request's](https://github.com/romeramatias/project-ApiFoxes/blob/master/API-Foxes.postman_collection.json)
 
 ## Users
@@ -33,9 +34,13 @@ Rutas de **registro** y **login** de **usuarios** necesarias para visualizar dat
 
 Ruta de registro de usuarios. Se debera enviar por  el **Body** un **JSON** con el siguiente esquema:
 >{
-	"username": "tunombredeusuario",
-	"email": "tuemail@gmail.com",
-    "password": "tupassword"
+>
+>	"username": "tunombredeusuario",
+>
+>	"email": "tuemail@gmail.com",
+>
+>	"password": "tupassword"
+>
 >}
 
 En el caso de que el registro sea exitoso se te pedira que realices el **login** para obtener un **token**.
@@ -46,9 +51,12 @@ En el caso de que el registro sea exitoso se te pedira que realices el **login**
 
 Para logearse en la API deberan enviar su **email** y **password** previamente ingresadas en el registro. El esquema será el siguiente:
 >{
-"email": "tuemail@gmail.com",
-"password": "tupassword"
-}
+>
+>	"email": "tuemail@gmail.com",
+>
+>	"password": "tupassword"
+>
+>}
 
 En el caso de que el ingreso sea exitoso se te brindara un **token** para que puedas acceder a las rutas de partidos.
 
@@ -85,7 +93,9 @@ Ruta que nos brinda cual fue el **ultimo partido** disputado del equipo
 Busqueda de un partido por identificador, a la ruta se le debera agregar el parametro de **ID** de tipo numerico para obtener uno de los encuentros.
 
 > **ID** = Number
+>
 > **Ejemplo:** 58959
+>
 > https://aqueous-cliffs-76671.herokuapp.com/matches/id/58959
 
 
@@ -96,7 +106,9 @@ Busqueda de un partido por identificador, a la ruta se le debera agregar el para
 Busqueda de un partido por fecha, a la ruta se le debera agregar el parametro de **Fecha** bajo el siguiente esquema:
 
 > **Date** = "AÑO-MES-DIA"
+>
 > **Ejemplo:** URL + 2020-11-02
+>
 > https://aqueous-cliffs-76671.herokuapp.com/matches/date/2020-11-02
 
 En caso de encontrar un partido con la fecha indicada lo mostrara.
@@ -108,7 +120,9 @@ En caso de encontrar un partido con la fecha indicada lo mostrara.
 Busqueda de partidos por un rango de fechas, a la ruta se le deberan agregar dos parametros de **Fechas** bajo el siguiente esquema:
 
 > **Date** = "AÑO-MES-DIA"
+>
 > **Ejemplo:** URL + 2020-09-01/2020-09-15
+>
 > https://aqueous-cliffs-76671.herokuapp.com/matches/2020-09-01/2020-09-15
 
 En caso de encontrar partidos en el rango indicado los mostrara.
@@ -120,7 +134,9 @@ En caso de encontrar partidos en el rango indicado los mostrara.
 Devolvera los puntos obtenidos dentro de un rango de fechas, a la ruta se le deberan agregar dos parametros de **Fechas** siguiendo los esquemas anteriores:
 
 > **Date** = "AÑO-MES-DIA"
+>
 > **Ejemplo:** URL + 2020-09-01/2020-09-05
+>
 > https://aqueous-cliffs-76671.herokuapp.com/matches/points/2020-09-01/2020-11-05
 
 Mostrara la cantidad de puntos del Leicester en el rango indicado.
