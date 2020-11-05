@@ -1,9 +1,7 @@
 const axios = require("axios");
 // Data reducida a 50 partidos
 const urlAPI =
-   "https://footballapi-lcfc.pulselive.com/football/fixtures?teams=26&comps=1,4,5,2,210,3&compSeasons=&homeTeams=&page=0&pageSize=30&sort=desc&statuses=C&altIds=true&provisional=false&detail=2";
-const fs = require("fs").promises;
-const path = "../data/matches.json";
+   "https://footballapi-lcfc.pulselive.com/football/fixtures?teams=26&comps=1,4,5,2,210,3&compSeasons=&homeTeams=&page=0&pageSize=20&sort=desc&statuses=C&altIds=true&provisional=false&detail=2";
 
 // Funcion que trae todos los partidos con todos sus datos
 async function getDatos() {

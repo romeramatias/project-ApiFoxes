@@ -16,7 +16,7 @@ router.post("/login", async (req, res, next) => {
    if (!passValida) {
       return res.status(404).send(`Contraseña incorrecta`);
    }
-   const token = jwt.sign({ id: user._id }, config.secret, { expiresIn: "7d" });
+   const token = jwt.sign({ id: user._id }, config.secret, { expiresIn: "1d" });
    res.json({ autorizacion: true, token: token, mensaje: "Sesión inciada, utilizar Bearer Token" });
 });
 

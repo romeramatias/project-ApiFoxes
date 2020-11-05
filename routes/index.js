@@ -4,7 +4,7 @@ const dataMatches = require("../controller/Matches");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-   //dataMatches.init();
+   dataMatches.cron();
    res.render("index", { title: "Express" });
 });
 
