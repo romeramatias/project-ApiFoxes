@@ -16,7 +16,7 @@ async function init() {
 
 async function getAll() {
    const connectionMongo = await connection.getConnection();
-   const matches = await connectionMongo.db("apifoxes").collection("matches").find().toArray();
+   const matches = await connectionMongo.db("apifoxes").collection("matches").find().sort({ date: -1 }).toArray();
    return matches;
 }
 
@@ -127,7 +127,7 @@ async function cron() {
          }
          index++;
       }
-      /* for (let index = 0; index < matches.length; index++) {
+      /* INEF RECORRE TODA LA DB for (let index = 0; index < matches.length; index++) {
          const element = matches[index];
          const matchInMongo = await getById(element.id);
          if (matchInMongo == null) {
