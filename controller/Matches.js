@@ -55,6 +55,7 @@ async function getByDateRange(date1, date2) {
       .db("apifoxes")
       .collection("matches")
       .find({ $and: [{ date: { $gte: date1 } }, { date: { $lte: date2 } }] })
+      .sort({ date: -1 })
       .toArray();
    return matches;
 }
