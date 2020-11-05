@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const matchesController = require("../controller/Matches");
-const moment = require("moment"); // require
 
 // GET Todos los partidos
 router.get("/", async (req, res) => {
