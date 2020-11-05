@@ -20,7 +20,7 @@ Librerias utilizadas:
 
 A continuacion intentare explicar en detalle el funcionamiento de cada una de las rutas, parametros que requieren y demas detalles. En el repositorio se encuentran ejemplos de request implementados en **Postman** para probar cada una de las rutas.
 > URL Heroku -> [API-Foxes](https://aqueous-cliffs-76671.herokuapp.com)
-> Postman Request's -> [Postman Request's]()
+> Postman Request's -> [Postman Request's](https://github.com/romeramatias/project-ApiFoxes/blob/master/API-Foxes.postman_collection.json)
 
 ## Users
 
