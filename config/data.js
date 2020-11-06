@@ -1,5 +1,5 @@
 const axios = require("axios");
-// Data reducida a 50 partidos
+// Data reducida a 31 partidos
 const urlAPI =
    "https://footballapi-lcfc.pulselive.com/football/fixtures?teams=26&comps=1,4,5,2,210,3&compSeasons=&homeTeams=&page=0&pageSize=31&sort=desc&statuses=C&altIds=true&provisional=false&detail=2";
 

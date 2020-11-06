@@ -1,21 +1,18 @@
-const connection = require("../config/dbconnection");
 const dataExtract = require("../config/data");
+const { Connection } = require('../config/MongoConnection');
 
 async function getAll() {
-   const connectionMongo = await connection.getConnection();
-   const matches = await connectionMongo.db("apifoxes").collection("matches").find().sort({ date: -1 }).toArray();
+   const matches = await Connection.db.db("apifoxes").collection("matches").find().sort({ date: -1 }).toArray();
    return matches;
 }
 
 async function last() {
-   const connectionMongo = await connection.getConnection();
-   const last = await connectionMongo.db("apifoxes").collection("matches").find().sort({ date: -1 }).limit(1).toArray();
+   const last = await Connection.db.db("apifoxes").collection("matches").find().sort({ date: -1 }).limit(1).toArray();
    return last;
 }
 
 async function getById(id) {
-   const connectionMongo = await connection.getConnection();
-   const match = await connectionMongo
+   const match = await Connection.db
       .db("apifoxes")
       .collection("matches")
       .findOne({ id: parseInt(id) });
@@ -23,19 +20,17 @@ async function getById(id) {
 }
 
 async function getByDate(date) {
-   const connectionMongo = await connection.getConnection();
    date = dateCreator(date);
    date.setUTCHours(0, 0, 0);
 
-   const match = await connectionMongo.db("apifoxes").collection("matches").findOne({ date: date });
+   const match = await Connection.db.db("apifoxes").collection("matches").findOne({ date: date });
    return match;
 }
 
 async function getByDateRange(date1, date2) {
-   const connectionMongo = await connection.getConnection();
    date1 = dateCreator(date1);
    date2 = dateCreator(date2);
-   const matches = await connectionMongo
+   const matches = await Connection.db
       .db("apifoxes")
       .collection("matches")
       .find({ $and: [{ date: { $gte: date1 } }, { date: { $lte: date2 } }] })
@@ -45,8 +40,7 @@ async function getByDateRange(date1, date2) {
 }
 
 async function create(match) {
-   const connectionMongo = await connection.getConnection();
-   const resultado = await connectionMongo.db("apifoxes").collection("matches").insertOne(match);
+   const resultado = await Connection.db.db("apifoxes").collection("matches").insertOne(match);
    return resultado;
 }
 
@@ -69,7 +63,6 @@ async function mostGA() {
 
 // TODO Validar en serio
 async function addMatch(match) {
-   const connectionMongo = await connection.getConnection();
    if (
       !match.hasOwnProperty("id") ||
       !match.hasOwnProperty("home") ||
@@ -85,8 +78,7 @@ async function addMatch(match) {
       !match.hasOwnProperty("rival")
    )
       throw "Campos faltantes";
-   console.log(match);
-   const resultado = await connectionMongo.db("apifoxes").collection("matches").insertOne(match);
+   const resultado = await Connection.db.db("apifoxes").collection("matches").insertOne(match);
    return resultado;
 }
 
