@@ -88,6 +88,6 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
-  console.log("Ejecutando funcion obtener datos desde API");
+  console.log("Ejecutando funcion obtener datos desde API.");
   matchesController.cron()
 }

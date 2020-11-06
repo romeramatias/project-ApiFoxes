@@ -94,6 +94,8 @@ async function addMatch(match) {
    return resultado;
 }
 
+// Suponiendo que la db esta al dia y no hay partidos mas antiguos al ultimo para ingresar
+// Corta la ejecucion al encontrar un partido ya ingresado
 async function cron() {
    const matches = await dataExtract.dataExtractor();
    const ultimo = await last();
@@ -106,17 +108,36 @@ async function cron() {
          const element = matches[index];
          const matchInMongo = await getById(element.id);
          if (matchInMongo == null) {
+            await create(element);
             console.log("Se ha agregado el siguiente partido:");
             console.log(element);
-            await create(element);
          } else {
             corte = true;
+            console.log("Ingreso de partidos finalizado.");
          }
          index++;
       }
    } else {
-      console.log("No hay nuevos partidos");
+      console.log("No hay nuevos partidos.");
    }
+
+ /*  
+      //Ineficiente al recorrer toda la db para buscar si el partido esta ingresado
+      //Pero funcionaria para agregar partidos viejos 
+      for (let index = 0; index < matches.length; index++) {
+         const element = matches[index];
+         const matchInMongo = await getById(element.id);
+         if (matchInMongo == null) {
+            await create(element);
+            console.log("Se ha agregado el siguiente partido:");
+            console.log(element);
+         } else {
+            console.log("No inserta");
+         }
+      } 
+   */
+
+
 }
 
 module.exports = { getAll, getById, create, getByDate, getByDateRange, addMatch, last, mostGA, cron };

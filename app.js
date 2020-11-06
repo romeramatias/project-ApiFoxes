@@ -4,7 +4,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
-//const cron = require("./config/cronJob");
+const cron = require("./config/cronJob");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const matchesRouter = require("./routes/matches");
@@ -24,9 +24,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use("/matches", matchesRouter);
+app.use("/matches", verificarToken, matchesRouter);
 
-// verificarToken
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
