@@ -16,6 +16,9 @@ Librerias utilizadas:
 - Bcryptjs
 - Node-Cron
 
+# Actualización de datos
+
+La API está hosteada en **Heroku** y los partidos serán **actualizados todos los días a las 00:00** mediante una función programada, también serán **actualizados** cuando el **servidor** se ejecute de manera **local**.
 
 # Endpoints
 
