@@ -18,6 +18,8 @@ Librerias utilizadas:
 - Bcryptjs
 - Node-Cron
 
+![Index](https://github.com/romeramatias/project-ApiFoxes/blob/master/public/image.jpg)
+
 # Actualización de datos
 
 La API está hosteada en **Heroku** y los partidos serán **actualizados todos los días a las 00:00** mediante una función programada, también serán **actualizados** cuando el **servidor** se ejecute de manera **local**.
