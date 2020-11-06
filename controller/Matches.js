@@ -124,8 +124,6 @@ async function cron() {
          }
       } 
    */
-
-
 }
 
 module.exports = { getAll, getById, create, getByDate, getByDateRange, addMatch, last, mostGA, cron };
