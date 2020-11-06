@@ -1,4 +1,5 @@
 const MongoClient = require("mongodb").MongoClient;
+require('dotenv').config()
 
 class Connection {
    static async connectToMongo() {
@@ -10,7 +11,7 @@ class Connection {
 }
 
 Connection.db = null;
-Connection.url = "mongodb+srv://romeramatias:pass21@cluster0.culfq.mongodb.net/apifoxes.matches?retryWrites=true&w=majority";
+Connection.url = process.env.URIMONGO;
 Connection.options = {
    useNewUrlParser: true,
    useUnifiedTopology: true,
