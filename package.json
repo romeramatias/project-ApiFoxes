@@ -6,8 +6,8 @@
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
-    "bcryptjs": "^2.4.3",
     "axios": "^0.21.0",
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
@@ -17,6 +17,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.2",
     "morgan": "~1.9.1",
+    "node-cron": "^2.0.3",
     "nodemon": "^2.0.6"
   }
 }

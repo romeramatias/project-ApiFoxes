@@ -1,18 +1,5 @@
-const fs = require("fs").promises;
 const connection = require("../config/dbconnection");
 const dataExtract = require("../config/data");
-
-// TODO FUNCION DEL CRON
-// TODO validar que no se ingrese de nuevo los mismo partidos
-async function init() {
-   let matches = await dataExtract.dataExtractor();
-   for (let index = 0; index < matches.length; index++) {
-      const element = matches[index];
-      await create(element);
-      let elementoEnMongo = await getById(element.id);
-      console.log(elementoEnMongo);
-   }
-}
 
 async function getAll() {
    const connectionMongo = await connection.getConnection();
@@ -118,26 +105,18 @@ async function cron() {
       while (!corte && matches.length > index) {
          const element = matches[index];
          const matchInMongo = await getById(element.id);
-         console.log("element", element);
-         console.log("matchinmong", matchInMongo);
          if (matchInMongo == null) {
+            console.log("Se ha agregado el siguiente partido:");
+            console.log(element);
             await create(element);
          } else {
-            console.log("corte true");
             corte = true;
          }
          index++;
       }
-      /* INEF RECORRE TODA LA DB for (let index = 0; index < matches.length; index++) {
-         const element = matches[index];
-         const matchInMongo = await getById(element.id);
-         if (matchInMongo == null) {
-            await create(element);
-         } else {
-            console.log("no inserto");
-         }
-      } */
+   } else {
+      console.log("No hay nuevos partidos");
    }
 }
 
-module.exports = { init, getAll, getById, create, getByDate, getByDateRange, addMatch, last, mostGA, cron };
+module.exports = { getAll, getById, create, getByDate, getByDateRange, addMatch, last, mostGA, cron };

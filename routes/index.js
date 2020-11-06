@@ -4,8 +4,8 @@ const dataMatches = require("../controller/Matches");
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-   dataMatches.cron();
-   res.render("index", { title: "Express" });
+   //dataMatches.cron();
+   res.render("index", { title: "API-Foxes" });
 });
 
 module.exports = router;
