@@ -2,7 +2,6 @@
 # API-Foxes
 
 **TO-DO**
-- Cron
 - Post Validates
 
 ---
@@ -15,11 +14,13 @@ Librerias utilizadas:
 - JSONWebToken
 - Dotenv
 - Bcryptjs
+- Node-Cron
 
 
 # Endpoints
 
-A continuación intentaré explicar en detalle el funcionamiento de cada una de las rutas, parámetros que requieren y demás detalles. En el repositorio se encuentran ejemplos de request implementados en **Postman** para probar cada una de las rutas.
+A continuación intentaré explicar en detalle el funcionamiento de cada una de las rutas, parámetros que requieren y demás detalles. En el repositorio se encuentran ejemplos de request implementados en **Postman** para probar cada una de las rutas. Incluyo en el proyecto el archivo .env para facilitar la prueba a modo local.
+
 > URL Heroku -> [API-Foxes](https://aqueous-cliffs-76671.herokuapp.com)
 >
 > Postman Request's -> [Postman Request's](https://github.com/romeramatias/project-ApiFoxes/blob/master/API-Foxes.postman_collection.json)
