@@ -3,11 +3,6 @@
 
 # API-Foxes
 
-**TO-DO**
-- Post Validates
-
----
-
 API Rest de los resultados de **Leicester City FC**, en donde se podrán visualizar datos de los últimos partidos de los Foxes. Realizada con **Node.js**, **MongoDB Atlas**, alojada en **Heroku**.
 
 Librerias utilizadas:
@@ -17,6 +12,8 @@ Librerias utilizadas:
 - Dotenv
 - Bcryptjs
 - Node-Cron
+
+![Index](https://github.com/romeramatias/project-ApiFoxes/blob/master/public/image.jpg)
 
 # Actualización de datos
 
