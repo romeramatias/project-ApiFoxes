@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-const app = require("../app");
+const app = require("../app.ts");
 const debug = require("debug")("apifoxes:server");
 const http = require("http");
 const matchesController = require("../controller/Matches");
