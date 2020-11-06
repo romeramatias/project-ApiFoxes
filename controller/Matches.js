@@ -25,10 +25,7 @@ async function getById(id) {
 async function getByDate(date) {
    const connectionMongo = await connection.getConnection();
    date = dateCreator(date);
-   console.log(date);
    date.setUTCHours(0, 0, 0);
-   console.log("dps del set");
-   console.log(date);
 
    const match = await connectionMongo.db("apifoxes").collection("matches").findOne({ date: date });
    return match;
@@ -73,7 +70,6 @@ async function mostGA() {
 // TODO Validar en serio
 async function addMatch(match) {
    const connectionMongo = await connection.getConnection();
-   console.log(match);
    if (
       !match.hasOwnProperty("id") ||
       !match.hasOwnProperty("home") ||
