@@ -1,4 +1,7 @@
 const axios = require("axios");
+const config = require("../config");
+const chalk = require('chalk');
+
 // Data reducida a 31 partidos
 const urlAPI =
    "https://footballapi-lcfc.pulselive.com/football/fixtures?teams=26&comps=1,4,5,2,210,3&compSeasons=&homeTeams=&page=0&pageSize=31&sort=desc&statuses=C&altIds=true&provisional=false&detail=2";
@@ -64,6 +67,7 @@ async function dataExtractor() {
       verifyWinner(matches[index]);
       matches[index].date.setUTCHours(0, 0, 0, 0);
    }
+   console.log(chalk.black.bgMagenta(config.now(), "Partidos obtenidos desde API."));
    return matches;
 }
 

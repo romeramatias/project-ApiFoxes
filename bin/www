@@ -9,6 +9,8 @@ const debug = require("debug")("apifoxes:server");
 const http = require("http");
 const matchesController = require("../controller/Matches");
 const { Connection } = require("../config/MongoConnection");
+const config = require("../config");
+const chalk = require('chalk');
 
 /**
  * Get port from environment and store in Express.
@@ -87,8 +89,8 @@ async function onListening() {
    debug("Listening on " + bind);
 
    await Connection.connectToMongo();
-   console.log("Base de datos conectada.");
+   console.log(chalk.black.bgGreen(config.now(), "Base de datos conectada."));
 
-   console.log("Ejecutando funcion obtener datos desde API.");
+   console.log(chalk.black.bgCyan(config.now(), "Ejecutando funcion obtener datos desde API."));
    await matchesController.cron();
 }

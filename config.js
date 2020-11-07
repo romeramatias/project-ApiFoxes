@@ -1,3 +1,8 @@
 require('dotenv').config()
+const timestamp = require('time-stamp');
 
-module.exports = { secret: process.env.SECRET };
+function now() {
+    return timestamp('[YYYY/MM/DD HH:mm:ss]')
+}
+
+module.exports = { now, secret: process.env.SECRET };

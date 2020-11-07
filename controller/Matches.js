@@ -1,5 +1,8 @@
 const dataExtract = require("../config/data");
 const { Connection } = require('../config/MongoConnection');
+const config = require("../config");
+const chalk = require('chalk');
+
 
 async function getAll() {
    const matches = await Connection.db.db("apifoxes").collection("matches").find().sort({ date: -1 }).toArray();
@@ -97,16 +100,16 @@ async function cron() {
          const matchInMongo = await getById(element.id);
          if (matchInMongo == null) {
             await create(element);
-            console.log("Se ha agregado el siguiente partido:");
-            console.log(element);
+            console.log(chalk.black.bgMagenta(config.now(), "Se ha agregado el siguiente partido:"));
+            console.log(chalk.black.bgMagenta(config.now(), element));
          } else {
             corte = true;
-            console.log("Ingreso de partidos finalizado.");
+            console.log(chalk.black.bgMagenta(config.now(), "Ingreso de partidos finalizado."));
          }
          index++;
       }
    } else {
-      console.log("No hay nuevos partidos.");
+      console.log(chalk.black.bgMagenta(config.now(), "No hay nuevos partidos."));
    }
 
  /*  
@@ -117,8 +120,8 @@ async function cron() {
          const matchInMongo = await getById(element.id);
          if (matchInMongo == null) {
             await create(element);
-            console.log("Se ha agregado el siguiente partido:");
-            console.log(element);
+            console.log(config.now(), "Se ha agregado el siguiente partido:");
+            console.log(config.now(), element);
          } else {
             console.log("No inserta");
          }
