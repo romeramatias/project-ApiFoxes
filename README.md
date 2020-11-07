@@ -12,6 +12,8 @@ Librerias utilizadas:
 - Dotenv
 - Bcryptjs
 - Node-Cron
+- Chalk
+- Time-stamp
 
 ![Index](https://github.com/romeramatias/project-ApiFoxes/blob/master/public/image.jpg)
 
@@ -50,7 +52,7 @@ En el caso de que el registro sea exitoso se te pedirá que realices el **login*
 ## Login
 > Ruta -> https://aqueous-cliffs-76671.herokuapp.com/users/login
 
-Para logearse en la API deberan enviar su **email** y **password** previamente ingresados en el registro. El esquema será el siguiente:
+Para logearse en la API deberan enviar en formato **JSON** su **email** y **password** previamente ingresados en el registro. El esquema será el siguiente:
 
     {
       "email": "tuemail@gmail.com",
@@ -74,7 +76,7 @@ Si se utiliza Postman, el procedimiento para ingresar el **token** es el siguien
 
 ## All Matches
 
-> Ruta -> https://aqueous-cliffs-76671.herokuapp.com/users/login
+> Ruta -> https://aqueous-cliffs-76671.herokuapp.com/matches
 
 En esta ruta obtendremos **todos los partidos** del Leicester ingresados en la base de datos de MongoDB **ordenados en fecha descendente**
 
