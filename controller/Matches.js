@@ -1,8 +1,7 @@
 const dataExtract = require("../config/data");
-const { Connection } = require('../config/MongoConnection');
+const { Connection } = require("../config/MongoConnection");
 const config = require("../config");
-const chalk = require('chalk');
-
+const chalk = require("chalk");
 
 async function getAll() {
    const matches = await Connection.db.db("apifoxes").collection("matches").find().sort({ date: -1 }).toArray();
@@ -15,6 +14,7 @@ async function last() {
 }
 
 async function getById(id) {
+   if (typeof id != Number) throw "ID debe ser de tipo numerico"
    const match = await Connection.db
       .db("apifoxes")
       .collection("matches")
@@ -24,6 +24,7 @@ async function getById(id) {
 
 async function getByDate(date) {
    date = dateCreator(date);
+   if (date == "Invalid Date") throw "Fecha invalida";
    date.setUTCHours(0, 0, 0);
 
    const match = await Connection.db.db("apifoxes").collection("matches").findOne({ date: date });
@@ -33,6 +34,10 @@ async function getByDate(date) {
 async function getByDateRange(date1, date2) {
    date1 = dateCreator(date1);
    date2 = dateCreator(date2);
+
+   if (date1 == "Invalid Date" || date2 == "Invalid Date") throw "Rango de fechas invalidos";
+   if (datesOutOfRange(date1, date2)) throw "Fuera del rango de fechas validas"
+
    const matches = await Connection.db
       .db("apifoxes")
       .collection("matches")
@@ -42,13 +47,10 @@ async function getByDateRange(date1, date2) {
    return matches;
 }
 
+
 async function create(match) {
    const resultado = await Connection.db.db("apifoxes").collection("matches").insertOne(match);
    return resultado;
-}
-
-function dateCreator(date) {
-   return new Date(date);
 }
 
 async function mostGA() {
@@ -62,6 +64,15 @@ async function mostGA() {
       }
    });
    return partido;
+}
+
+function dateCreator(date) {
+   return new Date(date);
+}
+
+function datesOutOfRange(date1, date2){
+   const oldDate = new Date("1970-01-01")
+   return ((!(date1 > oldDate && date1 < Date.now()) || !(date2 > oldDate && date2 < Date.now())))
 }
 
 // TODO Validar en serio
@@ -112,7 +123,7 @@ async function cron() {
       console.log(chalk.black.bgMagenta(config.now(), "No hay nuevos partidos."));
    }
 
- /*  
+   /*  
       //Ineficiente al recorrer toda la db para buscar si el partido esta ingresado
       //Pero funcionaria para agregar partidos viejos 
       for (let index = 0; index < matches.length; index++) {
