@@ -14,7 +14,7 @@ async function last() {
 }
 
 async function getById(id) {
-   if (typeof id != Number) throw "ID debe ser de tipo numerico"
+   if (typeof id != 'number') throw "ID debe ser de tipo numerico"
    const match = await Connection.db
       .db("apifoxes")
       .collection("matches")
@@ -112,7 +112,7 @@ async function cron() {
          if (matchInMongo == null) {
             await create(element);
             console.log(chalk.black.bgMagenta(config.now(), "Se ha agregado el siguiente partido:"));
-            console.log(chalk.black.bgMagenta(config.now(), element));
+            console.log(element);
          } else {
             corte = true;
             console.log(chalk.black.bgMagenta(config.now(), "Ingreso de partidos finalizado."));
