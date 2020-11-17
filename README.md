@@ -19,7 +19,7 @@ Librerias utilizadas:
 
 # Actualización de datos
 
-La API está hosteada en **Heroku** y los partidos serán **actualizados todos los días a las 00:00** mediante una función programada, también serán **actualizados** cuando el **servidor** se ejecute de manera **local**.
+La API está hosteada en **Heroku** y los partidos serán **actualizados todos los días a las 00:00** mediante una función programada, también serán **actualizados** cuando el **servidor** se ejecute de manera **local** o en un llamado al servidor de Heroku cuando la aplicacion este 'idling' (durmiendo).
 
 # Endpoints
 
