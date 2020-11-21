@@ -14,7 +14,7 @@ async function last() {
 }
 
 async function getById(id) {
-   if (typeof id != 'number') throw "ID debe ser de tipo numerico"
+   if (typeof id != "number") throw "ID debe ser de tipo numerico";
    const match = await Connection.db
       .db("apifoxes")
       .collection("matches")
@@ -36,7 +36,7 @@ async function getByDateRange(date1, date2) {
    date2 = dateCreator(date2);
 
    if (date1 == "Invalid Date" || date2 == "Invalid Date") throw "Rango de fechas invalidos";
-   if (datesOutOfRange(date1, date2)) throw "Fuera del rango de fechas validas"
+   if (datesOutOfRange(date1, date2)) throw "Fuera del rango de fechas validas";
 
    const matches = await Connection.db
       .db("apifoxes")
@@ -46,7 +46,6 @@ async function getByDateRange(date1, date2) {
       .toArray();
    return matches;
 }
-
 
 async function create(match) {
    const resultado = await Connection.db.db("apifoxes").collection("matches").insertOne(match);
@@ -70,9 +69,9 @@ function dateCreator(date) {
    return new Date(date);
 }
 
-function datesOutOfRange(date1, date2){
-   const oldDate = new Date("1970-01-01")
-   return ((!(date1 > oldDate && date1 < Date.now()) || !(date2 > oldDate && date2 < Date.now())))
+function datesOutOfRange(date1, date2) {
+   const oldDate = new Date("1970-01-01");
+   return !(date1 > oldDate && date1 < Date.now()) || !(date2 > oldDate && date2 < Date.now());
 }
 
 // TODO Validar en serio
@@ -92,6 +91,7 @@ async function addMatch(match) {
       !match.hasOwnProperty("rival")
    )
       throw "Campos faltantes";
+   match.date = dateCreator(match.date);
    const resultado = await Connection.db.db("apifoxes").collection("matches").insertOne(match);
    return resultado;
 }

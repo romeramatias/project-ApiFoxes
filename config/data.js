@@ -56,7 +56,7 @@ async function dataExtractor() {
          away: element.teams[1].team.name,
          scoreHome: element.teams[0].score,
          scoreAway: element.teams[1].score,
-         date: new Date(element.kickoff.label.replace("BST", "GMT")),
+         date: new Date(element.kickoff.label),
          competition: element.gameweek.compSeason.competition.description,
          stadium: element.ground.name,
          result: "Lose",
