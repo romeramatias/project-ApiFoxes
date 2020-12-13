@@ -14,7 +14,6 @@ async function last() {
 }
 
 async function getById(id) {
-   if (typeof id != "number") throw "ID debe ser de tipo numerico";
    const match = await Connection.db
       .db("apifoxes")
       .collection("matches")
