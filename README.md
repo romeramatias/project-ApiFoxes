@@ -15,7 +15,7 @@ Librerias utilizadas:
 - Chalk
 - Time-stamp
 
-![Index](https://github.com/romeramatias/project-ApiFoxes/blob/master/public/image.jpg)
+![Index](https://github.com/romeramatias/project-ApiFoxes/blob/master/public/image.png)
 
 # Actualización de datos
 
